@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "day1.h"
 
 int day1_p1(char *file){
