@@ -8,6 +8,7 @@
 
 #include "../src/Day1/day1.h"
 #include "../src/Day2/day2.h"
+#include "../src/Day3/day3.h"
 
 bool showResults;
 

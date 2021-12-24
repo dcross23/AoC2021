@@ -54,6 +54,32 @@ START_TEST(Day2_P2)
 }
 END_TEST
 
+START_TEST(Day3_P1)
+{	
+	int exampleResult = day3_p1("../src/Day3/day3.example");
+	if(showResults){
+		printf("Day3 Part1 Example: %d\n", exampleResult);
+	
+		int inputResult = day3_p1("../src/Day3/day3.input");
+		printf("Day3 Part1 Input  : %d\n", inputResult);
+	}
+	ck_assert_int_eq(exampleResult , 198);
+}
+END_TEST
+
+START_TEST(Day3_P2)
+{	
+	int exampleResult = day3_p2("../src/Day3/day3.example");
+	if(showResults){
+		printf("Day3 Part2 Example: %d\n", exampleResult);
+	
+		int inputResult = day3_p2("../src/Day3/day3.input");
+		printf("Day3 Part2 Input  : %d\n", inputResult);
+	}
+	ck_assert_int_eq(exampleResult , 230);
+}
+END_TEST
+
 Suite* createAocTests(){
 	Suite *s;
 	TCase *tc;
@@ -65,6 +91,8 @@ Suite* createAocTests(){
 	tcase_add_test(tc, Day1_P2);
 	tcase_add_test(tc, Day2_P1);
 	tcase_add_test(tc, Day2_P2);
+	tcase_add_test(tc, Day3_P1);
+	tcase_add_test(tc, Day3_P2);
 	suite_add_tcase(s, tc);
 
 	return s;
