@@ -13,6 +13,7 @@
 #include "../src/Day5/day5.h"
 #include "../src/Day6/day6.h"
 #include "../src/Day7/day7.h"
+#include "../src/Day8/day8.h"
 
 bool showResults;
 
