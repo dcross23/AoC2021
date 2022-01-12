@@ -88,7 +88,7 @@ void printGraph(Graph *g){
 
 
 //PART 1
-int dfs(GNode *u, GNode *v, Graph *g){
+int dfs(GNode *u, GNode *v){
 	if(strcmp(u->name, v->name) == 0)
 		return 1;
 	else if(!u->isBigCave && u->visited) 
@@ -99,7 +99,7 @@ int dfs(GNode *u, GNode *v, Graph *g){
 	
 	int paths = 0;
 	for(int i=0; i<u->nextSz; i++){
-		paths += dfs(u->next[i], v, g);
+		paths += dfs(u->next[i], v);
 	}
 
 	u->visited = false;
@@ -113,7 +113,7 @@ int findNumPaths(Graph *g){
 	int endPos = findNode("end", g);
 	GNode *end = g->nodes[endPos];
 
-	int numPaths = dfs(start, end, g);
+	int numPaths = dfs(start, end);
 	return numPaths;
 }
 
