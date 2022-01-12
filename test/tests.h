@@ -17,6 +17,7 @@
 #include "../src/Day9/day9.h"
 #include "../src/Day10/day10.h"
 #include "../src/Day11/day11.h"
+#include "../src/Day12/day12.h"
 
 bool showResults;
 

@@ -21,9 +21,9 @@ START_TEST(Day1_P2)
 	
 		int inputResult = day1_p2("../src/Day1/day1.input");
 		printf("Day1 Part2 Input  : %d\n", inputResult);
+		printf("\n");
 	}
 	ck_assert_int_eq(exampleResult , 5);
-	printf("\n");
 }
 END_TEST
 
@@ -48,9 +48,9 @@ START_TEST(Day2_P2)
 	
 		int inputResult = day2_p2("../src/Day2/day2.input");
 		printf("Day2 Part2 Input  : %d\n", inputResult);
+		printf("\n");
 	}
 	ck_assert_int_eq(exampleResult , 900);
-	printf("\n");
 }
 END_TEST
 
@@ -75,9 +75,9 @@ START_TEST(Day3_P2)
 	
 		int inputResult = day3_p2("../src/Day3/day3.input");
 		printf("Day3 Part2 Input  : %d\n", inputResult);
+		printf("\n");
 	}
 	ck_assert_int_eq(exampleResult , 230);
-	printf("\n");
 }
 END_TEST
 
@@ -102,9 +102,9 @@ START_TEST(Day4_P2)
 	
 		int inputResult = day4_p2("../src/Day4/day4.input");
 		printf("Day4 Part2 Input  : %d\n", inputResult);
+		printf("\n");
 	}
 	ck_assert_int_eq(exampleResult , 1924);
-	printf("\n");
 }
 
 START_TEST(Day5_P1)
@@ -128,9 +128,9 @@ START_TEST(Day5_P2)
 	
 		int inputResult = day5_p2("../src/Day5/day5.input");
 		printf("Day5 Part2 Input  : %d\n", inputResult);
+		printf("\n");
 	}
 	ck_assert_int_eq(exampleResult , 12);
-	printf("\n");
 }
 END_TEST
 
@@ -155,9 +155,9 @@ START_TEST(Day6_P2)
 	
 		long long int inputResult = day6_p2("../src/Day6/day6.input");
 		printf("Day6 Part2 Input  : %lld\n", inputResult);
+		printf("\n");
 	}
 	ck_assert_int_eq(exampleResult , 26984457539);
-	printf("\n");
 }
 END_TEST
 
@@ -182,9 +182,9 @@ START_TEST(Day7_P2)
 	
 		int inputResult = day7_p2("../src/Day7/day7.input");
 		printf("Day7 Part2 Input  : %d\n", inputResult);
+		printf("\n");
 	}
 	ck_assert_int_eq(exampleResult , 168);
-	printf("\n");
 }
 END_TEST
 
@@ -210,9 +210,9 @@ START_TEST(Day8_P2)
 	
 		int inputResult = day8_p2("../src/Day8/day8.input");
 		printf("Day8 Part2 Input  : %d\n", inputResult);
+		printf("\n");
 	}
 	ck_assert_int_eq(exampleResult , 61229);
-	printf("\n");
 }
 END_TEST
 
@@ -238,9 +238,9 @@ START_TEST(Day9_P2)
 	
 		int inputResult = day9_p2("../src/Day9/day9.input");
 		printf("Day9 Part2 Input  : %d\n", inputResult);
+		printf("\n");
 	}
 	ck_assert_int_eq(exampleResult , 1134);
-	printf("\n");
 }
 END_TEST
 
@@ -266,9 +266,9 @@ START_TEST(Day10_P2)
 	
 		long long int inputResult = day10_p2("../src/Day10/day10.input");
 		printf("Day10 Part2 Input  : %lld\n", inputResult);
+		printf("\n");
 	}
 	ck_assert_int_eq(exampleResult , 288957);
-	printf("\n");
 }
 END_TEST
 
@@ -293,8 +293,49 @@ START_TEST(Day11_P2)
 	
 		int inputResult = day11_p2("../src/Day11/day11.input");
 		printf("Day11 Part2 Input  : %d\n", inputResult);
+		printf("\n");
 	}
 	ck_assert_int_eq(exampleResult , 195);
+}
+END_TEST
+
+START_TEST(Day12_P1)
+{	
+	int exampleResult = day12_p1("../src/Day12/day12.example");
+	int exampleResult2 = day12_p1("../src/Day12/day12.example2");
+	int exampleResult3 = day12_p1("../src/Day12/day12.example3");
+	if(showResults){
+		printf("Day12 Part1 Example : %d\n", exampleResult);
+		printf("Day12 Part1 Example2: %d\n", exampleResult2);
+		printf("Day12 Part1 Example3: %d\n", exampleResult3);
+	
+		int inputResult = day12_p1("../src/Day12/day12.input");
+		printf("Day12 Part1 Input   : %d\n", inputResult);
+	}
+	ck_assert_int_eq(exampleResult , 10);
+	ck_assert_int_eq(exampleResult2 , 19);
+	ck_assert_int_eq(exampleResult3 , 226);
+}
+END_TEST
+
+START_TEST(Day12_P2)
+{	
+	int exampleResult = day12_p2("../src/Day12/day12.example");
+	int exampleResult2 = day12_p2("../src/Day12/day12.example2");
+	int exampleResult3 = day12_p2("../src/Day12/day12.example3");
+	if(showResults){
+		printf("Day12 Part2 Example : %d\n", exampleResult);
+		printf("Day12 Part2 Example2: %d\n", exampleResult2);
+		printf("Day12 Part2 Example3: %d\n", exampleResult3);
+	
+		int inputResult = day12_p2("../src/Day12/day12.input");
+		printf("Day12 Part2 Input   : %d\n", inputResult);
+		printf("\n");
+	}
+	ck_assert_int_eq(exampleResult , 36);
+	ck_assert_int_eq(exampleResult2 , 103);
+	ck_assert_int_eq(exampleResult3 , 3509);
+
 }
 END_TEST
 
@@ -328,6 +369,8 @@ Suite* createAocTests(){
 	tcase_add_test(tc, Day10_P2);
 	tcase_add_test(tc, Day11_P1);
 	tcase_add_test(tc, Day11_P2);
+	tcase_add_test(tc, Day12_P1);
+	tcase_add_test(tc, Day12_P2);
 	suite_add_tcase(s, tc);
 
 	return s;
