@@ -5,9 +5,10 @@ My solutions for Advent of Code 2021 in C.
 ```bash
 	$ cd test
 	$ make tests
-	$ ./tests [-sr]
+	$ ./tests [-sr] [-sk]
 ```
 - Parameter "-sr" shows up the results of the function executed.
+- Parameter "-sk" skips slow parts. Only works if "-sr" parameter is added.
 
 ## Requirements
  - Install Check for testing in C
