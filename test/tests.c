@@ -391,8 +391,47 @@ START_TEST(Day14_P2)
 	
 		long long int inputResult = day14_p2("../src/Day14/day14.input");
 		printf("Day14 Part2 Input  : %lld\n", inputResult);
+		printf("\n");
 	}
 	ck_assert_int_eq(exampleResult , 2188189693529);
+}
+END_TEST
+
+START_TEST(Day15_P1)
+{	
+	int exampleResult = day15_p1("../src/Day15/day15.example");
+	if(showResults){
+		printf("Day15 Part1 Example: %d\n", exampleResult);
+	
+		int inputResult = day15_p1("../src/Day15/day15.input");
+		printf("Day15 Part1 Input  : %d\n", inputResult);
+	}
+	ck_assert_int_eq(exampleResult , 40);
+}
+END_TEST
+
+START_TEST(Day15_P2)
+{	
+	int exampleResult = day15_p2("../src/Day15/day15.example");
+	if(showResults){
+		printf("Day15 Part2 Example: %d\n", exampleResult);
+		printf("[*] Part2 is slow, u have to wait 3-5 min aprox.\n");
+
+		if(!skipSlowParts){
+			clock_t start = clock();
+			int inputResult = day15_p2("../src/Day15/day15.input");
+			clock_t end = clock();
+			printf("\n[*] Time for part 2: %ld seconds\n", (end-start)/CLOCKS_PER_SEC);
+			printf("Day15 Part2 Input  : %d\n", inputResult);
+		
+		}else{
+			printf("[*] Skiping slow part\n");
+			printf("[*] My result for this part: 2851\n");
+		}
+
+		printf("\n");
+	}
+	ck_assert_int_eq(exampleResult , 315);
 }
 END_TEST
 
@@ -402,6 +441,7 @@ Suite* createAocTests(){
 
 	s = suite_create("Aoc2021");
 	tc = tcase_create("Core");
+	tcase_set_timeout(tc, 300);
 
 	tcase_add_test(tc, Day1_P1);
 	tcase_add_test(tc, Day1_P2);
@@ -431,16 +471,24 @@ Suite* createAocTests(){
 	tcase_add_test(tc, Day13_P2);
 	tcase_add_test(tc, Day14_P1);
 	tcase_add_test(tc, Day14_P2);
+	tcase_add_test(tc, Day15_P1);
+	tcase_add_test(tc, Day15_P2);
 	suite_add_tcase(s, tc);
 
 	return s;
 }
 
 int main(int argc, char **argv){
-	if(argc > 1 && strcmp(argv[1], "-sr")==0){
-		showResults = true;		
-	}else
-		showResults = false;
+	showResults = skipSlowParts = false;
+	if(argc > 1){
+		for(int i=1; i<argc; i++){
+			if(strcmp(argv[i], "-sr")==0)
+				showResults = true;	
+
+			if(strcmp(argv[i], "-sk")==0)
+				skipSlowParts = true;	
+		}
+	}
 
 
 	Suite *suite;

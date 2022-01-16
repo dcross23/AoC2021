@@ -92,7 +92,7 @@ bool isEmptyRow(int row, bool (*table)[COLS], int cols){
 	return true;
 }
 
-void day13_p2(char *file){
+int day13_p2(char *file){
 	FILE *f;
 
 	if(NULL == (f = fopen(file, "r")))

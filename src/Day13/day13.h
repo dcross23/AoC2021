@@ -7,6 +7,6 @@
 #include <string.h>
 
 int day13_p1(char *file);
-void day13_p2(char *file);
+int day13_p2(char *file);
 
 #endif

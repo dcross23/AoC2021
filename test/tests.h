@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <check.h>
+#include <time.h>
 
 #include "../src/Day1/day1.h"
 #include "../src/Day2/day2.h"
@@ -20,8 +21,10 @@
 #include "../src/Day12/day12.h"
 #include "../src/Day13/day13.h"
 #include "../src/Day14/day14.h"
+#include "../src/Day15/day15.h"
 
 bool showResults;
+bool skipSlowParts;
 
 #endif
 
