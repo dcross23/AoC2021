@@ -435,6 +435,49 @@ START_TEST(Day15_P2)
 }
 END_TEST
 
+START_TEST(Day16_P1)
+{	
+	int exampleResult = day16_p1("../src/Day16/examples/day16.example");
+	int exampleResult2 = day16_p1("../src/Day16/examples/day16.example2");
+	int exampleResult3 = day16_p1("../src/Day16/examples/day16.example3");
+	int exampleResult4 = day16_p1("../src/Day16/examples/day16.example4");
+	if(showResults){
+		printf("Day16 Part1 Example : %d\n", exampleResult);
+		printf("Day16 Part1 Example2: %d\n", exampleResult2);
+		printf("Day16 Part1 Example3: %d\n", exampleResult3);
+		printf("Day16 Part1 Example4: %d\n", exampleResult4);
+	
+		int inputResult = day16_p1("../src/Day16/day16.input");
+		printf("Day16 Part1 Input   : %d\n", inputResult);
+	}
+	ck_assert_int_eq(exampleResult , 16);
+ 	ck_assert_int_eq(exampleResult2, 12);
+	ck_assert_int_eq(exampleResult3, 23);
+ 	ck_assert_int_eq(exampleResult4, 31);
+}
+END_TEST
+
+START_TEST(Day16_P2)
+{	
+	long long int exampleResult = 0;
+	char line[50];
+	FILE *f = fopen("../src/Day16/examples/day16.examplespart2","r");
+	while(fgets(line, sizeof(line), f)){
+		exampleResult += testDay16_p2(line);
+	}
+
+	if(showResults){
+		printf("Day16 Part2 Examples: %lld (Sum of examples of part2)\n", exampleResult);
+	
+		long long int inputResult = day16_p2("../src/Day16/day16.input");
+		printf("Day16 Part2 Input   : %lld\n", inputResult);
+		printf("\n");
+	}
+	//To avoid writing many examples, just sum the values of executing them from a file
+	ck_assert_int_eq(exampleResult , 3+54+7+9+1+0+0+1);
+}
+END_TEST
+
 Suite* createAocTests(){
 	Suite *s;
 	TCase *tc;
@@ -473,6 +516,8 @@ Suite* createAocTests(){
 	tcase_add_test(tc, Day14_P2);
 	tcase_add_test(tc, Day15_P1);
 	tcase_add_test(tc, Day15_P2);
+	tcase_add_test(tc, Day16_P1);
+	tcase_add_test(tc, Day16_P2);
 	suite_add_tcase(s, tc);
 
 	return s;
