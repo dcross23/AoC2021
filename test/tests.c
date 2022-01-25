@@ -426,7 +426,7 @@ START_TEST(Day15_P2)
 		
 		}else{
 			printf("[*] Skiping slow part\n");
-			printf("[*] My result for this part: 2851\n");
+			printf("[*] My result for this part with Input: 2851\n");
 		}
 
 		printf("\n");
@@ -532,6 +532,52 @@ START_TEST(Day18_P2)
 }
 END_TEST
 
+START_TEST(Day19_P1)
+{	
+	int exampleResult = day19_p1("../src/Day19/day19.example");
+	if(showResults){
+		printf("Day19 Part1 Example: %d\n", exampleResult);
+		printf("[*] Part1 is slow, u have to wait 5-10 min aprox.\n");
+		
+		if(!skipSlowParts){
+			clock_t start = clock();
+			int inputResult = day19_p1("../src/Day19/day19.input");
+			clock_t end = clock();
+			printf("\n[*] Time for part 1: %ld seconds\n", (end-start)/CLOCKS_PER_SEC);
+			printf("Day19 Part1 Input  : %d\n", inputResult);
+		
+		}else{
+			printf("[*] Skiping slow part\n");
+			printf("[*] My result for this part with Input: 408\n");
+		}
+	}
+}
+END_TEST
+
+START_TEST(Day19_P2)
+{	
+	int exampleResult = day19_p2("../src/Day19/day19.example");
+	if(showResults){
+		printf("Day19 Part2 Example: %d\n", exampleResult);
+		printf("[*] Part2 is slow, u have to wait 5-10 min aprox.\n");
+		
+		if(!skipSlowParts){
+			clock_t start = clock();
+			int inputResult = day19_p2("../src/Day19/day19.input");
+			clock_t end = clock();
+			printf("\n[*] Time for part 2: %ld seconds\n", (end-start)/CLOCKS_PER_SEC);
+			printf("Day19 Part2 Input  : %d\n", inputResult);
+		
+		}else{
+			printf("[*] Skiping slow part\n");
+			printf("[*] My result for this part with Input: 13348\n");
+		}
+		printf("\n");
+	}
+	ck_assert_int_eq(exampleResult , 3621);
+}
+END_TEST
+
 Suite* createAocTests(){
 	Suite *s;
 	TCase *tc;
@@ -576,6 +622,8 @@ Suite* createAocTests(){
 	tcase_add_test(tc, Day17_P2);
 	tcase_add_test(tc, Day18_P1);
 	tcase_add_test(tc, Day18_P2);
+	tcase_add_test(tc, Day19_P1);
+	tcase_add_test(tc, Day19_P2);
 	suite_add_tcase(s, tc);
 
 	return s;
