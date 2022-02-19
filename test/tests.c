@@ -717,6 +717,21 @@ START_TEST(Day24_P2)
 }
 END_TEST
 
+START_TEST(Day25_P1)
+{	
+	int exampleResult = day25_p1("../src/Day25/day25.example");
+	if(showResults){
+		printf("Day25 Part1 Example: %d\n", exampleResult);
+	
+		int inputResult = day25_p1("../src/Day25/day25.input");
+		printf("Day25 Part1 Input  : %d\n", inputResult);
+
+		printf("\nFINISHED AOC 2021 :D!!!!!\n");
+	}
+	ck_assert_int_eq(exampleResult , 58);
+}
+END_TEST
+
 Suite* createAocTests(){
 	Suite *s;
 	TCase *tc;
@@ -773,6 +788,7 @@ Suite* createAocTests(){
 	tcase_add_test(tc, Day23_P2);
 	tcase_add_test(tc, Day24_P1);
 	tcase_add_test(tc, Day24_P2);
+	tcase_add_test(tc, Day25_P1);
 	suite_add_tcase(s, tc);
 
 	return s;
