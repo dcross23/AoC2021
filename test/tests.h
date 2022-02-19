@@ -31,6 +31,7 @@
 #include "../src/Day22/day22.h"
 #include "../src/Day23/day23.h"
 #include "../src/Day24/day24.h"
+#include "../src/Day25/day25.h"
 
 bool showResults;
 bool skipSlowParts;
